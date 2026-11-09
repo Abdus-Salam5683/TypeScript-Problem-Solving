@@ -19,3 +19,7 @@ const formatCoordinate = (
   const [latitude, longitude, locationName] = coordinate;
   return `Location: ${locationName} (${latitude}, ${longitude})`;
 };
+//* Problem 4: Generic + Rest parameters (...arrays)
+const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+  return arrays.reduce<T[]>((combined, arr) => [...combined, ...arr], []);
+};
