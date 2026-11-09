@@ -12,3 +12,10 @@ const processInput = (input: string | number | boolean): string | number => {
   }
   return input ? "Active" : "Inactive";
 };
+//* Problem 3: Readonly tuple
+const formatCoordinate = (
+  coordinate: readonly [number, number, string],
+): string => {
+  const [latitude, longitude, locationName] = coordinate;
+  return `Location: ${locationName} (${latitude}, ${longitude})`;
+};
