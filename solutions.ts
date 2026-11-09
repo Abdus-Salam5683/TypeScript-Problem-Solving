@@ -36,3 +36,8 @@ const getPopularCourses = (courses: Course[], minStudents: number): Course[] => 
     (course) => course.isPublished && course.students >= minStudents,
   );
 };
+
+//* Problem 6: Generic with keyof constraint
+const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
+  return items.map((item) => item[key]);
+};
