@@ -23,3 +23,16 @@ const formatCoordinate = (
 const concatenateArrays = <T>(...arrays: T[][]): T[] => {
   return arrays.reduce<T[]>((combined, arr) => [...combined, ...arr], []);
 };
+
+//* Problem 5: Interface + filter (original array is not mutated)
+interface Course {
+  title: string;
+  students: number;
+  isPublished: boolean;
+}
+
+const getPopularCourses = (courses: Course[], minStudents: number): Course[] => {
+  return courses.filter(
+    (course) => course.isPublished && course.students >= minStudents,
+  );
+};
